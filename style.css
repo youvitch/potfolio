@@ -1,0 +1,365 @@
+/* Section Hero */
+.hero {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  background-image: url('https://i.imgur.com/nyyjuSR.jpeg'); /* Ajout d'un fond spécifique */
+  background-attachment: fixed; /* Effet de parallaxe pour l'arrière-plan */
+  overflow: hidden;
+}
+
+/* Ajout d'un effet de superposition sombre pour rendre le texte plus lisible */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Ombre semi-transparente */
+  z-index: -1;
+  transition: background 0.3s ease;
+}
+
+.hero h1 {
+  font-size: 4rem; /* Taille de texte plus grande */
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-top: 15px;
+  font-family: 'Poppins', sans-serif;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.2s forwards;
+  animation-delay: 0.3s;
+}
+
+.hero .btn {
+  font-size: 1.1rem;
+  padding: 15px 30px;
+  margin-top: 20px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 30px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: #218838;
+  transform: scale(1.1);
+}
+
+.hero .btn:focus {
+  outline: none;
+}
+
+.hero h1,
+.hero p,
+.hero .btn {
+  z-index: 1; /* S'assurer que le texte et les boutons sont au-dessus du fond */
+}
+
+.hero .animate-text {
+  animation: textAnimate 2s ease-in-out infinite alternate;
+}
+
+.hero .animate-text span {
+  display: inline-block;
+  color: #28a745;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.hero .animate-text:hover span {
+  color: #ffffff; /* Animation de couleur au survol */
+}
+
+/* Animation de la section */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textAnimate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Animation de superposition du fond */
+.hero:hover::before {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Ajout de l'ombre portée au texte pour plus de visibilité */
+.hero h1,
+.hero p {
+  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Pour les petits écrans */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .hero .btn {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+}
+
+
+/* Section About Me */
+#about img {
+  border-radius: 50%;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); /* Ombre douce */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* Ajout de transition pour le filtre */
+  max-width: 150px; /* Limiter la taille de l'image */
+  width: 100%; /* S'assurer que l'image est responsive */
+  height: auto; /* Ajuster automatiquement la hauteur */
+  display: block;
+  margin: 0 auto; /* Centrer l'image horizontalement */
+  object-fit: cover; /* S'assurer que l'image remplit le cercle */
+  border: 5px solid #fff; /* Ajout d'une bordure blanche pour une finition propre */
+  transition: all 0.3s ease;
+}
+
+/* Effet de survol : image agrandie avec une ombre plus intense */
+#about img:hover {
+  transform: scale(1.1); /* Agrandissement de l'image */
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.4); /* Ombre plus grande et plus intense */
+  filter: brightness(1.2); /* Augmenter la luminosité de l'image au survol */
+  border-color: #28a745; /* Changer la couleur de la bordure en vert pistache */
+}
+
+/* Ajout d'une animation douce au survol */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Application de l'animation de pulsation */
+#about img:hover {
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+
+/* Social Links */
+/* Social Links */
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-links a {
+  margin: 0 15px;
+  font-size: 2rem;
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease, filter 0.3s ease; /* Ajout de la transition sur le filtre */
+  position: relative; /* Pour permettre un effet de survol avec l'ombre */
+}
+
+.social-links a::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #28a745;
+  transition: width 0.3s ease;
+}
+
+/* Effet au survol des icônes sociales */
+.social-links a:hover {
+  transform: scale(1.2);
+  color: #28a745; /* Couleur du texte au survol */
+  filter: brightness(1.3); /* Augmenter la luminosité au survol */
+}
+
+.social-links a:hover::before {
+  width: 100%; /* La barre verte se déploie au survol */
+}
+
+/* Contact Form */
+#contact .form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+#contact input, #contact textarea {
+  border-radius: 5px;
+  padding: 15px;
+  border: 2px solid #ccc;
+  width: 100%;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transition des bordures et de l'ombre */
+}
+
+#contact input:focus, #contact textarea:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 10px rgba(40, 167, 69, 0.5); /* Ombre verte au focus */
+  outline: none; /* Enlever la bordure par défaut */
+}
+
+#contact button {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Animation de couleur et de transformation */
+}
+
+#contact button:hover {
+  background-color: #218838;
+  transform: scale(1.05); /* Légère agrandissement au survol */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .social-links a {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .social-links a {
+    font-size: 1.5rem;
+  }
+
+  #about img {
+    width: 150px;
+    height: 150px;
+  }
+
+  #contact input, #contact textarea {
+    padding: 12px;
+  }
+
+  #contact button {
+    padding: 10px;
+    font-size: 1rem;
+  }
+}
+
+/* Animations & Effects */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.social-links a:hover {
+  animation: bounce 0.6s ease-in-out;
+}
+
+
+/* Contact Form */
+#contact .form-group {
+  margin-bottom: 20px;
+}
+
+#contact button {
+  width: 100%;
+  padding: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .social-links a {
+    font-size: 1.5rem;
+  }
+
+  #about img {
+    width: 150px;
+    height: 150px;
+  }
+}
+/* CSS pour les images des logos */
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-md-6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+img {
+  max-width: 150px; /* Ajustez la taille selon vos besoins */
+  height: auto;
+  margin-bottom: 10px;
+}
+
+p {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+/* Style personnalisé pour la description du stage */
+p em {
+    font-family: 'Arial', sans-serif;  /* Changer la police */
+    font-size: 1.1em;  /* Augmenter légèrement la taille de la police */
+    color: #555;  /* Changer la couleur de la police */
+    font-style: normal;  /* Pour désactiver l'italique si nécessaire */
+    font-weight: 400;  /* Poids de la police (normal) */
+}

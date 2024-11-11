@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - A Pen by JUBA</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Portfolio</title>
+  <!-- Ajouter le lien vers la feuille de style Bootstrap -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+<link rel="icon" href="https://res.cloudinary.com/dgqbl6lj3/image/upload/v1731347630/j_1_jwe6b5.ico" type="image/x-icon">
+
+  <style>
+    /* CSS intégré dans le HTML pour une meilleure organisation sur CodePen */
+  </style>
+</head>
+<body>
+  <!-- Section Hero -->
+  <section class="hero" style="background-image: url('https://i.imgur.com/nyyjuSR.jpeg');">
+    <div class="container text-center text-white d-flex justify-content-center align-items-center" style="height: 100vh;">
+      <div>
+        <h1 class="display-4">Je suis Juba Sidi Moussa</h1>
+        <p class="lead">Étudiant en Marketing Digital Jeunesse à l'université de Poitiers | Passionné par l'innovation et la transformation digitale</p>
+        <a href="#about" class="btn btn-light">En savoir plus</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section About Me -->
+  <section id="about" class="py-5">
+    <div class="container text-center">
+      <h2>À propos de moi</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <img src="https://i.imgur.com/obZtDaZ.png" class="img-fluid rounded-circle shadow-lg" alt="Juba Sidi Moussa" width="180">
+        </div>
+        <div class="col-md-8">
+          <p class="lead">Je suis étudiant en marketing digital, passionné par la stratégie numérique et l'innovation. Grâce à des stages en grande distribution et en banque, j’ai développé des compétences en gestion de projet et en marketing digital. Le développement web, une passion personnelle, me permet également de montrer mon adaptabilité.</p>
+        </div>
+      </div>
+      <h3>Mes expériences professionnelles :</h3>
+      <div class="row">
+        <div class="col-md-6">
+          <img src="https://i.imgur.com/Y2X7t5m.png" class="img-fluid" alt="Dylia Negoce">
+          <p><strong>Dylia Négoce </strong></p>
+          <p><em>Stage en tant que chargé marketing digital dans une entreprise de grande distribution</em></p>
+        </div>
+        <div class="col-md-6">
+          <img src="https://i.imgur.com/KTImEhR.png" class="img-fluid" alt="CNEP Banque">
+          <p><strong>CNEP Banque</strong></p>
+          <p><em>Stage en gestion de la relation client (CRM) à la CNEP Banque</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Social Links -->
+  <section id="social" class="py-5 bg-dark text-white text-center">
+    <div class="container">
+      <h2>Suivez-moi sur les réseaux sociaux</h2>
+      <div class="social-links">
+        <a href="https://www.facebook.com/juba.sidimoussa.1/?locale=fr_FR" class="social-icon" target="_blank">
+          <img src="https://i.imgur.com/8YNyFwA.png" alt="Facebook" width="30" height="30">
+        </a>
+        <a href="https://www.linkedin.com/in/juba-sidi-moussa-777a13280/" class="social-icon" target="_blank">
+          <img src="https://i.imgur.com/2B5HkAR.png" alt="LinkedIn" width="30" height="30">
+        </a>
+        <a href="mailto:juba.sidi.moussa@gmail.com" class="social-icon" target="_blank">
+          <img src="https://i.imgur.com/nEun7Df.png" alt="Email" width="30" height="30">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section CV Download -->
+  <section id="cv" class="py-5 text-center">
+    <div class="container">
+      <h2>Téléchargez mon CV</h2>
+      <a href="https://docs.google.com/uc?export=download&id=1zonJO8dBlSlbL_rjTd7I6mVLvgh4X8E9" class="btn btn-success" download>Télécharger CV</a>
+    </div>
+  </section>
+
+  <!-- Section Contact -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center">Contactez-moi</h2>
+      <form action="https://formspree.io/f/xkgnbrnq" method="POST">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="name">Nom</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Bootstrap and Font Awesome JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+  document.querySelector('a[href="#about"]').addEventListener('click', function(event) {
+    event.preventDefault(); // Empêche le comportement par défaut
+    document.querySelector('#about').scrollIntoView({
+      behavior: 'smooth' // Ajoute un défilement fluide
+    });
+  });
+</script>
+
+</body>
+    <footer class="text-center py-3">
+    <p>&copy; 2024 Juba Sidi Moussa</p>
+  </footer>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
